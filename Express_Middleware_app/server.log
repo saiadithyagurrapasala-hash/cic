@@ -1,0 +1,11 @@
+POST /api/v1/patients 201 - 2ms
+POST /api/v1/patients 201 - 2ms
+GET /api/v1/patients 200 - 2ms
+GET /api/v1/patients?ward=ICU 200 - 1ms
+GET /api/v1/patients/101 200 - 2ms
+PUT /api/v1/patients/101 200 - 3ms
+DELETE /api/v1/patients/101 200 - 6ms
+GET /api/v1/patients 304 - 2ms
+GET /favicon.ico 404 - 2ms
+GET /api/v1/patients?ward=ICU 304 - 1ms
+GET /api/v1/patient 404 - 9ms

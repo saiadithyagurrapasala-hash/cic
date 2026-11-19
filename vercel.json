@@ -1,0 +1,83 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "express_middleware_app": {
+      "root": "Express_Middleware_app",
+      "framework": "express"
+    },
+    "faculty_file_perisistent_app": {
+      "root": "faculty_file_perisistent_app",
+      "framework": "express"
+    },
+    "mongo_express_app": {
+      "root": "mongo_express_app",
+      "framework": "express"
+    },
+    "mongoose-movies-app": {
+      "root": "mongoose-movies-app",
+      "framework": "express"
+    },
+    "mvc_auc_app": {
+      "root": "mvc_auc_app",
+      "framework": "express"
+    },
+    "mvc_express_app": {
+      "root": "mvc_express_app",
+      "framework": "express"
+    },
+    "products-non-presistent-app": {
+      "root": "Products-non-presistent-app",
+      "framework": "express"
+    },
+    "template-engine-ejs-app-main": {
+      "root": "template-engine-ejs-app-main",
+      "framework": "express"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/v1/patients",
+      "destination": { "service": "express_middleware_app" }
+    },
+    {
+      "source": "/api/v1/patients/(.*)",
+      "destination": { "service": "express_middleware_app" }
+    },
+    {
+      "source": "/api/v1/faculty",
+      "destination": { "service": "faculty_file_perisistent_app" }
+    },
+    {
+      "source": "/api/v1/faculty/(.*)",
+      "destination": { "service": "faculty_file_perisistent_app" }
+    },
+    {
+      "source": "/api/v1/books",
+      "destination": { "service": "mongo_express_app" }
+    },
+    {
+      "source": "/api/v1/books/(.*)",
+      "destination": { "service": "mongo_express_app" }
+    },
+    {
+      "source": "/api/v1/movies",
+      "destination": { "service": "mvc_express_app" }
+    },
+    {
+      "source": "/api/v1/movies/(.*)",
+      "destination": { "service": "mvc_express_app" }
+    },
+    {
+      "source": "/products",
+      "destination": { "service": "products-non-presistent-app" }
+    },
+    {
+      "source": "/products/(.*)",
+      "destination": { "service": "products-non-presistent-app" }
+    },
+    {
+      "source": "/(.*)",
+      "destination": { "service": "template-engine-ejs-app-main" }
+    }
+  ]
+}
